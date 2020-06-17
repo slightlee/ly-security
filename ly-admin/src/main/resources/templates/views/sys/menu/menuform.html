@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Art-Mall</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../../../statics/plugins/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../../../statics/css/bus/content.css" media="all">
+</head>
+<body>
+
+  <div class="layui-form" lay-filter="layuiadmin-form-useradmin" id="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+    <div class="layui-form-item">
+      <label class="layui-form-label">类&emsp;&emsp;型</label>
+      <div class="layui-input-block">
+        <input type="radio" lay-filter="radio-btn" name="type" value="1" title="菜单" checked>
+        <input type="radio" lay-filter="radio-btn" name="type" value="2" title="按钮" >
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">名&emsp;&emsp;称</label>
+      <div class="layui-input-inline" id="layui-input-custom-css">
+        <input type="text" name="name" lay-verify="required" placeholder="请输入..." autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">上级菜单</label>
+      <div class="layui-input-inline" id="layui-input-custom-css2">
+        <input type="text" id="parentId" placeholder="一级菜单" class="layui-input">
+        <input type="hidden" id="rparentId" name="parentId" value="0" class="layui-input" >
+      </div>
+    </div>
+    <div class="layui-form-item" id="div-url">
+      <label class="layui-form-label">URL</label>
+      <div class="layui-input-inline" id="layui-input-custom-css3">
+        <input type="text" name="url" lay-verify="required" id="url" placeholder="请输入URL" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">排&emsp;&emsp;序</label>
+      <div class="layui-input-inline" id="layui-input-custom-css4">
+        <input type="text" name="orderNum" lay-verify="required" id="orderNum" placeholder="请输入序号" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">授权标识</label>
+      <div class="layui-input-inline" id="layui-input-custom-css5">
+        <input type="text" name="perms" lay-verify="required" id="perms" placeholder="多个用逗号分隔 如：sys/menu/save;sys/menu/update;" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item" id="div-icon">
+      <label class="layui-form-label">图&emsp;&emsp;标</label>
+      <div class="layui-input-inline" id="layui-input-custom-css6">
+        <input type="text" name="icon" lay-verify="icon" id="icon" placeholder="图标" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <hr/>
+    &emsp;&emsp;&emsp;
+    <span class="custom-icon-span">图标参考网址:  https://www.iconfont.cn</span>
+    <div class="layui-form-item layui-hide">
+      <input type="button" lay-submit lay-filter="lay-submit" id="lay-submit" value="确认">
+    </div>
+  </div>
+
+  <script src="../../../../statics/plugins/layui/layui.js"></script>
+  <script>
+  layui.config({
+    base : '../../../../statics/modules/' //静态资源所在路径
+  }).use('form');
+  </script>
+</body>
+</html>

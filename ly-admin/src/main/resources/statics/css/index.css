@@ -1,0 +1,159 @@
+
+/* 输入框默认颜色 */
+::-webkit-input-placeholder{color: #ccc}
+
+
+/* 去除滚动条 */
+::-webkit-scrollbar{display: none}
+
+
+/*取消导航栏下面的线条*/
+.layui-header .layui-nav .layui-this:after, .layui-header .layui-nav-bar {
+	display: none;
+}
+
+
+/* 重置布局结构 */
+.layui-layout-admin .layui-header{position: fixed; top: 0; left: 0; width: 100%; height: 50px;}
+.layui-layout-admin .layui-header .layui-nav .layui-nav-child a{color: #333;}
+.layui-layout-admin .layui-header .layui-nav-img{width: 26px; height: 26px;}
+.layui-layout-admin .layui-header .layui-nav-child{top: 55px;}
+
+.layui-layout-admin .layui-side{width: 220px; top: 0; z-index: 1001;transition: all .3s;}
+.layui-layout-admin .layui-logo,
+.layui-layout-admin .layui-header .layui-nav .layui-nav-item{height: 50px; line-height: 50px;}
+.layui-layout-admin .layui-logo{transition: width .3s;position: fixed;width: 220px; height: 49px; padding: 0 15px; box-sizing: border-box; overflow: hidden; font-weight: 300; background-repeat: no-repeat;z-index: 1001;}
+
+.layui-layout-admin .layui-nav-item .layui-icon span{margin-left: 5px;}
+
+.layui-layout-admin .layui-body {left: 220px;top: 39px;bottom: 44px;}
+
+
+/* layui 拓展图标 样式 */
+.icon {
+	/* 通过设置 font-size 来改变图标大小 */
+	width: 1em; height: 1em;
+	/* 图标和文字相邻时，垂直对齐 */
+	vertical-align: -0.15em;
+	/* 通过设置 color 来改变 SVG 的颜色/fill */
+	fill: currentColor;
+	/* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+       normalize.css 中也包含这行 */
+	overflow: hidden;
+}
+
+
+
+/* 头部导航 */
+.layui-layout-admin .layui-layout-right{padding: 0;}
+.layui-header .layui-nav-item .layui-icon{position: relative; top: 1px; font-size: 16px;}
+.layui-header .layui-layout-right .layui-badge-dot{margin-left: 11px;}
+
+
+/* 左侧导航菜单 */
+.layui-side-menu .layui-nav{width: 220px; margin-top: 50px; background: none;}
+.layui-side-menu .layui-nav .layui-nav-item a{height: 40px; line-height: 40px; padding-left: 45px; padding-right: 30px;}
+.layui-side-menu .layui-nav .layui-nav-item > a{padding-top: 8px; padding-bottom: 8px;}
+.layui-side-menu .layui-nav .layui-nav-item a:hover{background: none;}
+.layui-side-menu .layui-nav .layui-nav-itemed > .layui-nav-child{padding: 5px 0;}
+.layui-side-menu .layui-nav .layui-nav-child .layui-nav-child{background: none!important;}
+.layui-side-menu .layui-nav .layui-nav-child .layui-nav-child a{padding-left: 60px}
+.layui-side-menu .layui-nav .layui-nav-more{right: 15px;}
+
+
+
+/* 左侧菜单隐藏显示  不显示 mini 导航*/
+/*.left-nav-mini.layui-layout-admin .layui-side{transform: translate3d(-220px, 0, 0);}
+.left-nav-mini.layui-layout-admin .layui-layout-left,
+.left-nav-mini .layui-body,
+.left-nav-mini .layui-footer{left: 0;}*/
+
+
+/* 左侧导航折叠样式   -----左侧显示 宽度 60px 的 mini 导航 */
+.left-nav-mini .layui-side-menu .layui-nav-itemed .layui-nav-child {display: none;}
+.left-nav-mini .layui-side-menu {width: 60px;}
+.left-nav-mini .layui-side-menu .layui-nav {width: 60px;}
+.left-nav-mini .layui-logo {width: 60px;/*background-image: url(../image/portrait.png);background-size: 60px;*/}
+.left-nav-mini .layui-side-menu .layui-nav-item>a{padding-right: 0;right: 22px;}
+.left-nav-mini .layui-side-menu .layui-nav .layui-nav-item > a span {display: none;}
+.left-nav-mini .layui-layout-admin .layui-body {left: 60px;}
+.left-nav-mini .layui-layout-admin .layui-layout-left {left: 60px;}
+.left-nav-mini .layui-layout-admin .layui-footer {left: 60px;}
+
+/* 侧边菜单 - 平板移动设备 */
+@media screen and (max-width: 750px){
+
+	.layui-layout-admin .layui-side{z-index: 1000;top: -50px;left: -260px;transition: all .3s;}
+	.layui-layout-admin .layui-layout-left,
+	.layui-layout-admin .layui-body,
+	.layui-layout-admin .layui-footer{transition: all .3s;left: 0;}
+	.layui-layout-admin .layui-logo{display: none;}
+
+	/*展开样式*/
+	.left-nav-mini .layui-side .layui-nav-itemed .layui-nav-child {display: block;} /*display:block;强制将它改成块元素*/
+	.left-nav-mini .layui-side {width: 220px;left: 0;}
+	.left-nav-mini .layui-side .layui-nav {width: 220px;}
+	.left-nav-mini .layui-side .layui-nav .layui-nav-item > a span {display: inline-block;}
+	.left-nav-mini .layui-layout-left.
+	.left-nav-mini .layui-body.
+	.left-nav-mini .layui-footer{left: 0;}
+	/*屏幕遮罩*/
+	.left-nav-mini .site-mobile-shade {position: fixed;top: 0;bottom: 0;left: 0;right: 0;background-color: rgba(0, 0, 0, .5);z-index: 999;}
+
+}
+
+
+/* 内容 */
+.layui-layout-admin .layui-body {background-color: #F0F2F5;}
+.layui-tab-content iframe {position: absolute;height: 100%;width: 100%;border: none;margin-top: 10px;left: 0;}
+.layui-tab-content {padding: 0;}
+
+
+/* 页面操作 按钮样式 */
+.layui-tab-title{background-color: #f9f9f9 !important;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);}
+
+.lay_tabs_box{padding-right: 142px;}
+
+.lay-close-box {background-color: #f9f9f9;box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);margin-top: 11px;position: absolute;right: 0;top: 0;}
+
+.lay-close-box a span.layui-nav-more {border-color: #333 transparent transparent;}
+.lay-close-box a span.layui-nav-more.layui-nav-mored {border-color: transparent transparent #333;}
+
+.lay-close-box .layui-nav-item {line-height: 40px;}
+.lay-close-box .layui-nav-item > a, .lay-close-box .layui-nav-item > a:hover {color: #333;}
+.lay-close-box .layui-nav-child {top: 42px;left: -12px;}
+.lay-close-box .layui-nav-bar {display: none;}
+.lay-close-box .layui-nav-item > a i{font-size: 20px;position: absolute;top: 1px;left: 0;}
+
+
+/* 底部固定区域 */
+.layui-layout-admin .layui-footer{box-shadow: 0 -1px 2px 0 rgba(0,0,0,.05);}
+.layui-layout-admin .layui-footer{background-color: #fff;}
+.layui-layout-admin .layui-footer{padding: 1px 0; z-index: 999; text-align: center;}
+
+
+/* 默认主题修饰 */
+.layui-layout-admin .layui-header{border-bottom: 1px solid #f6f6f6; box-sizing: border-box; background-color: #009688;}
+.layui-layout-admin .layui-header a,
+	/*.layui-layout-admin .layui-header a cite{color: #ffffff;}*/
+.layui-layout-admin .layui-header a:hover{color: #ffffff;}
+
+.layui-layout-admin .layui-header .layui-nav .layui-this:after,
+.layui-layout-admin .layui-header .layui-nav-bar{height: 2px; background-color: #20222A}
+
+.layui-layout-admin .layui-logo{background-color: #009688; box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);}
+.layui-layout-admin .layui-logo,
+.layui-layout-admin .layui-logo a{color: #fff; color: rgba(255,255,255,.8)}
+
+.layui-side-menu{box-shadow: 1px 0 2px 0 rgba(0,0,0,.05);}
+.layui-side-menu{background-color: #20222A; color: #fff;}
+
+.layui-tab-title li.layui-this:after {border: none; height: 2px; background-color: #009688;}
+
+
+
+
+
+
+
+

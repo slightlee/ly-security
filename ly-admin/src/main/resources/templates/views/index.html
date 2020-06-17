@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>LY</title>
+    <link rel="stylesheet" href="../../statics/plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../statics/css/index.css" media="all">
+    <link rel="stylesheet" href="../../statics/plugins/layui-icon-extend/iconfont.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+
+            <li class="layui-nav-item" lay-unselect>
+                <a href="javascript:;" layui-event="flexible" title="侧边伸缩">
+                    <i class="layui-icon layui-icon-shrink-right" id="layui_flexible"></i>
+                </a>
+            </li>
+
+            <li class="layui-nav-item" lay-unselect>
+                <a href="javascript:;" layui-event="refresh" class="refresh refreshThis" title="刷新">
+                    <i class="layui-icon layui-icon-refresh"></i>
+                </a>
+            </li>
+
+            <!--    <li class="layui-nav-item"><a href="javascript:;" id ="openConsole">控制台</a></li>
+        <li class="layui-nav-item"><a href="javascript:;" id ="openArt">内容管理</a></li>-->
+
+
+        </ul>
+        <ul class="layui-nav layui-layout-right" lay-filter="headMenu">
+
+          <!--  <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                <a href="javascript:;" id="clearCache" layui-event="" title="单击清除缓存">
+                    <i class="layui-icon layui-icon-more"></i>
+                </a>
+            </li>-->
+
+           <!-- <li class="layui-nav-item" lay-unselect>
+                &lt;!&ndash;<a lay-href="app/message/index2.html" layui-event="message" title="消息">&ndash;&gt;
+                <a href="javascript:;" layui-event="message" title="消息">
+                    <i class="layui-icon layui-icon-notice"></i>
+                    &lt;!&ndash; 如果有新消息，则显示小圆点 &ndash;&gt;
+                    <span class="layui-badge-dot"></span>
+                </a>
+            </li>-->
+
+            <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                <a href="javascript:;" layui-event="fullscreen" title="全屏">
+                    <i class="layui-icon layui-icon-screen-full"></i>
+                </a>
+            </li>
+
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="../../statics/image/portrait.png" class="layui-nav-img">
+                    <!--SLIGHTLEE -->
+                    <cite id="user"></cite>
+
+                </a>
+
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;"lay-id="001" lay-title="基本资料" lay-url="sys/user/userinfo">基本资料</a></dd>
+                    <dd><a href="/sys/logout">退出</a></dd>
+                </dl>
+            </li>
+
+            <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                <a href="javascript:;" layui-event="about"><i class="layui-icon layui-icon-more-vertical"></i></a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="layui-side layui-side-menu">
+        <div class="layui-side-scroll">
+
+            <!-- logo -->
+            <div class="layui-logo">
+                <a href="#">Y</a>
+            </div>
+
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="leftMenu" lay-filter="leftMenu">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhuye1"></use></svg> 主&emsp;&emsp;页
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this">
+                            <a href="javascript:;" lay-id="111" lay-title ="控制台" lay-url="home/console.html">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-kongzhitai_"></use></svg> 控制台
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- 右边内容区域 -->
+    <div class="layui-body">
+        <div class="layui-tab layui-tab-card lay_tabs_box" lay-filter="leftMenuTab" lay-allowClose="true">
+
+            <!-- 菜单导航 -->
+            <ul class="layui-tab-title" id="tab_tabs">
+                <li class="layui-this" lay-id="111"><i class="layui-icon">&#xe68e;</i> 控制台<p class="layui-tab-close" style="display: none;"></p></li>
+            </ul>
+
+            <ul class="layui-nav lay-close-box">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><i class="layui-icon layui-icon-radio"></i>
+                        <span style="margin-left: 6px;">页面操作</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" layui-event="closeCurrentPage"><i class="layui-icon layui-icon-close-fill"></i> 关闭当前标签</a></dd>
+                        <dd><a href="javascript:;" layui-event="closeOtherPage"><i class="layui-icon layui-icon-close-fill"></i> 关闭其他标签</a></dd>
+                        <dd><a href="javascript:;" layui-event="closeAllPage"><i class="layui-icon layui-icon-close-fill"></i> 关闭全部标签</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+            <!-- 内容 -->
+            <div class="layui-tab-content" id="layui-body">
+                <div class="layui-tab-item layui-show">
+                    <iframe src="home/console.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © LY BY SLIGHTLEE
+    </div>
+</div>
+
+<!-- 屏幕遮罩 -->
+<div class="site-mobile-shade"></div>
+
+
+<script src="../../statics/plugins/layui/layui.js"></script>
+<script src="../../statics/plugins/layui-icon-extend/iconfont.js"></script>
+<script>
+
+    layui.config({
+        base :'../../statics/modules/'  // 静态资源路径
+    }).extend({
+        index : 'index'
+    }).use(['index']);
+
+</script>
+</body>
+</html>

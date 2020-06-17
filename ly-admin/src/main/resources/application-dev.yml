@@ -1,0 +1,10 @@
+# 数据源
+spring:
+  datasource:
+    druid:
+      username: root
+      password: 123456
+      url: jdbc:mysql://127.0.0.1:3306/ly-security?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+
+
+

@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ly 后台管理系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../../../statics/plugins/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../../../statics/css/index.css" media="all">
+</head>
+<body>
+
+  <div class="layui-fluid">
+    <div class="layui-card">
+      <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+        <div class="layui-form-item">
+          <div class="layui-inline">
+              <select name="searchKey">
+                <option value>搜索条件</option>
+                <option value="role_name">角色名称</option>
+              </select>
+          </div>
+          <div class="layui-inline">
+              <input type="text" name="searchValue" placeholder="请输入..." autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-inline">
+            <button class="layui-btn" lay-submit lay-filter="LAY-table-search">
+              <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+              搜索
+            </button>
+          </div>
+
+          <div class="layui-inline">
+              <button class="layui-btn ud-btn" data-type="add">
+                <i class="layui-icon layui-icon-add-1 layuiadmin-button-btn"></i>
+               添加
+              </button>
+          </div>
+
+          <div class="layui-inline">
+            <button class="layui-btn ud-btn" data-type="del">
+              <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>
+              删除
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+        <table id="LAY-table-manage" lay-filter="LAY-table-manage"></table>
+
+        <script type="text/html" id="table-user-admin">
+          <a class="layui-btn  layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../../../statics/plugins/layui/layui.js"></script>
+  <script>
+
+  layui.config({
+      base : '../../../../statics/modules/' //静态资源所在路径
+  }).extend({
+      index : 'index',
+      role : 'sys/role'
+  }).use(['index','role']);
+
+  </script>
+</body>
+</html>

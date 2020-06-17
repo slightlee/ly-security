@@ -1,0 +1,76 @@
+# 端口配置
+server:
+  port: 8866
+
+  # 环境配置
+spring:
+  profiles:
+    active: dev
+
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  # Thymeleaf 配置
+  thymeleaf:
+    prefix: classpath:/templates/   #配置模板路径，默认是templates，可以不用配置
+    mode: HTML                     # 语法不严格按照HTML5
+    cache: false                   #开发配置为false,避免修改模板还要重启服务器  注意 页面修改代码之后，使用 Ctrl + F9
+    encoding: UTF-8
+    suffix: .html                   #名称的后缀
+    # 上传大小
+  servlet:
+    multipart:
+      enabled: true               # 配置文件传输
+      file-size-threshold: 0
+      max-file-size: 100MB       #  单个数据大小
+      max-request-size: 100MB   # 总数据大小
+
+
+
+# mybatis-plus 配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.ly.*.*.*.model
+  check-config-location: true
+  configuration:
+    #是否开启自动驼峰命名规则（camel case）映射
+    map-underscore-to-camel-case: true
+    #全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存
+    cache-enabled: false
+    call-setters-on-nulls: true
+    #配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'
+    #MyBatis 自动映射时未知列或未知属性处理策略 NONE：不做任何处理 (默认值), WARNING：以日志的形式打印相关警告信息, FAILING：当作映射失败处理，并抛出异常和详细信息
+    auto-mapping-unknown-column-behavior: warning
+    #mybatis-plus配置控制台打印完整带参数SQL语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      #主键类型  0:"数据库ID自增 AUTO ", 1:"未设置主键类型 NONE ",2:"用户输入ID (该类型可以通过自己注册自动填充插件进行填充) INPUT ", 3:"全局唯一ID (idWorker) ID_WORKER , 4:全局唯一ID (UUID), 5:字符串全局唯一ID (idWorker 的字符串表示) ID_WORKER_STR ";
+      id-type: INPUT
+      #数据库大写下划线转换
+      capital-mode: true
+      #逻辑删除值
+      logic-delete-value: 0
+      #逻辑未删除值
+      logic-not-delete-value: 1
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      field-strategy: NOT_NULL
+
+      #文件配置
+
+ # 日志级别配置
+logging:
+  level:
+    com:
+      ly:
+        lyadmin:
+          modules:
+            sys:
+              mapper: debug
+            bus:
+              mapper: debug

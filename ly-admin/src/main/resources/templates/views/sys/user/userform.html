@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ly 后台管理系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../../../statics/plugins/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../../../statics/css/bus/content.css" media="all">
+</head>
+<body>
+
+  <div class="layui-form" lay-filter="layuiadmin-form-useradmin" id="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+    <div class="layui-form-item">
+      <label class="layui-form-label">用 &nbsp;户&nbsp;名</label>
+      <div class="layui-input-inline" id="layui-input-custom-css">
+        <input type="text" name="username" lay-verify="required" id="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">密&emsp;&emsp;码</label>
+      <div class="layui-input-inline" id="layui-input-custom-css2">
+        <input type="password" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">手机号码</label>
+      <div class="layui-input-inline" id="layui-input-custom-css3">
+        <input type="text" name="mobile" lay-verify="phone" id="mobile" placeholder="请输入号码" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">邮&emsp;&emsp;箱</label>
+      <div class="layui-input-inline" id="layui-input-custom-css4">
+        <input type="text" name="email" lay-verify="email" id="email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">角&emsp;&emsp;色</label>
+      <div class="layui-input-inline" id="layui-input-custom-css5">
+        <select name="roleId" lay-verify="required">
+          <option value="">请选择</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">登录权限</label>
+      <div class="layui-input-block">
+        <input type="checkbox" name="switch" id="status" lay-skin="switch"  lay-text="正常|禁用" >
+      </div>
+    </div>
+    <div class="layui-form-item layui-hide">
+      <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+    </div>
+  </div>
+
+  <script src="../../../../statics/plugins/layui/layui.js"></script>
+  <script>
+  layui.config({
+      base: '../../../../statics/modules/' //静态资源所在路径
+  }).extend({
+    index: 'index', //主入口模块
+    useradmin : 'sys/useradmin'
+  }).use(['index', 'form','useradmin'])
+  </script>
+</body>
+</html>
